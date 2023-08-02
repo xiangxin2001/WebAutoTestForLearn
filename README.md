@@ -1,7 +1,7 @@
 # WebAutoTestForLearn
-#Start
+# Start
 run run.py to start
-#Pip package list
+# Pip package list
 Package               Version
 --------------------- --------
 allure-pytest         2.13.2
@@ -38,5 +38,5 @@ typing_extensions     4.7.1
 tzdata                2023.3
 urllib3               2.0.3
 wsproto               1.2.0 
-#APP needed
+# APP needed
 python3.8.1 allure2.23.1
