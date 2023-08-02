@@ -1,0 +1,1 @@
+{"name": "主流程冒烟测试", "status": "skipped", "parameters": [{"name": "data", "value": "['lisi', '123456', '人事总监']"}], "start": 1690964334493, "stop": 1690964334493, "uuid": "41bb090a-016f-41b8-b754-85410bcfe09c", "testCaseId": "ceaa53429c60c432ea83d07efedeaf6b", "fullName": "cases.smoke_test.TestSmoke#test_smoke"}
