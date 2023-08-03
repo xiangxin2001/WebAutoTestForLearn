@@ -15,22 +15,22 @@ class MainPage():
         self.logo_loc=(By.XPATH,'//*[@id="root"]/section/aside/div/a/div')
         self.head_icon_span_loc=(By.XPATH,'//*[@id="root"]/section/section/header/div/div[2]/span/span[1]')
         self.logout_li_loc=(By.XPATH,'//li[text()="退出登录"]')
-        self.menu_zhaopinguanli_loc=(By.XPATH,'//*[@id="root"]/section/aside/div/ul/li[1]/div')
-        self.menu_zhaopinguanli_zhaopingenzong_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[1]/div')
-        self.menu_zhaopinguanli_zhaopingenzong_custom_loc=(By.XPATH,'//*[@id="saleRecruitManage$Menu"]/li[1]')
-        self.menu_zhaopinguanli_zhaopingenzong_ad_loc=(By.XPATH,'//*[@id="saleRecruitManage$Menu"]/li[2]')
-        self.menu_zhaopinguanli_ziyuanfenpei_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[2]/div')
-        self.menu_zhaopinguanli_ziyuanfenpei_custom_loc=(By.XPATH,'//*[@id="recruitDistribute$Menu"]/li[1]')
-        self.menu_zhaopinguanli_ziyuanfenpei_ad_loc=(By.XPATH,'//*[@id="recruitDistribute$Menu"]/li[2]')
-        self.menu_zhaopinguanli_ziyuanguanli_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[3]/div')
-        self.menu_zhaopinguanli_ziyuanguanli_custom_loc=(By.XPATH,'//*[@id="resume$Menu"]/li[1]')
-        self.menu_zhaopinguanli_ziyuanguanli_ad_loc=(By.XPATH,'//*[@id="resume$Menu"]/li[2]')
-        self.menu_zhaopinguanli_biangengrenshizhuanyuan_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[4]')
-        self.menu_zhaopinguanli_shujuluru_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[5]')
-        self.menu_zhaopinguanli_ziyuanchaxun_loc=(By.XPATH,'//*[@id="sale$Menu"]/li[6]')
-        self.menu_dangqianrenwu_loc=(By.XPATH,'//*[@id="root"]/section/aside/div/ul/li[2]/div')
-        self.menu_dangqianrenwu_huifangziyuan_loc=(By.XPATH,'//*[@id="today$Menu"]/li[1]')
-        self.menu_dangqianrenwu_xinziyuan_loc=(By.XPATH,'//*[@id="today$Menu"]/li[2]')
+        self.menu_zhaopinguanli_loc=(By.XPATH,'//span[text()="招聘管理"]')
+        self.menu_zhaopinguanli_zhaopingenzong_loc=(By.XPATH,'//span[text()="招聘跟踪"]')
+        self.menu_zhaopinguanli_zhaopingenzong_custom_loc=(By.XPATH,'//a[text()="传统简历跟踪"]')
+        self.menu_zhaopinguanli_zhaopingenzong_ad_loc=(By.XPATH,'//a[text()="广告简历跟踪"]')
+        self.menu_zhaopinguanli_ziyuanfenpei_loc=(By.XPATH,'//span[text()="资源分配"]')
+        self.menu_zhaopinguanli_ziyuanfenpei_custom_loc=(By.XPATH,'//a[text()="传统简历分配"]')
+        self.menu_zhaopinguanli_ziyuanfenpei_ad_loc=(By.XPATH,'//a[text()="广告简历分配"]')
+        self.menu_zhaopinguanli_ziyuanguanli_loc=(By.XPATH,'//span[text()="资源管理"]')
+        self.menu_zhaopinguanli_ziyuanguanli_custom_loc=(By.XPATH,'//a[text()="传统简历管理"]')
+        self.menu_zhaopinguanli_ziyuanguanli_ad_loc=(By.XPATH,'//a[text()="广告简历管理"]')
+        self.menu_zhaopinguanli_biangengrenshizhuanyuan_loc=(By.XPATH,'//a[text()="变更人事专员"]')
+        self.menu_zhaopinguanli_shujuluru_loc=(By.XPATH,'//a[text()="数据录入"]')
+        self.menu_zhaopinguanli_ziyuanchaxun_loc=(By.XPATH,'//a[text()="资源管理"]')
+        self.menu_dangqianrenwu_loc=(By.XPATH,'//span[text()="当前任务"]')
+        self.menu_dangqianrenwu_huifangziyuan_loc=(By.XPATH,'//a[text()="回访资源"]')
+        self.menu_dangqianrenwu_xinziyuan_loc=(By.XPATH,'//a[text()="新资源"]')
 
         #当前目录
         self.cur_dir = os.path.dirname(os.path.abspath(__file__))
@@ -40,7 +40,7 @@ class MainPage():
         self.wait=WebDriverWait(self.driver,10)
 
     @allure.step("点击logo进入欢迎页面")
-    def goto_shujuluru_page(self):
+    def goto_welcome_page(self):
         try:
             self.wait.until(ec.presence_of_element_located(self.logo_loc))
             self.driver.find_element(*self.logo_loc).click()
@@ -67,6 +67,7 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_shujuluru_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_shujuluru_loc).click()
         except Exception as e:
@@ -79,8 +80,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_zhaopingenzong_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_zhaopingenzong_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_zhaopingenzong_custom_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_zhaopingenzong_custom_loc).click()
         except Exception as e:
@@ -93,8 +96,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanfenpei_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanfenpei_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanfenpei_custom_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanfenpei_custom_loc).click()
         except Exception as e:
@@ -107,8 +112,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanguanli_custom_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanguanli_custom_loc).click()
         except Exception as e:
@@ -121,8 +128,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_zhaopingenzong_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_zhaopingenzong_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_zhaopingenzong_ad_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_zhaopingenzong_ad_loc).click()
         except Exception as e:
@@ -135,8 +144,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanfenpei_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanfenpei_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanfenpei_ad_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanfenpei_ad_loc).click()
         except Exception as e:
@@ -149,8 +160,10 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanguanli_ad_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanguanli_ad_loc).click()
         except Exception as e:
@@ -163,6 +176,7 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_biangengrenshizhuanyuan_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_biangengrenshizhuanyuan_loc).click()
         except Exception as e:
@@ -175,6 +189,7 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_zhaopinguanli_ziyuanchaxun_loc))
             self.driver.find_element(*self.menu_zhaopinguanli_ziyuanchaxun_loc).click()
         except Exception as e:
@@ -187,6 +202,7 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_dangqianrenwu_loc))
             self.driver.find_element(*self.menu_dangqianrenwu_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_dangqianrenwu_huifangziyuan_loc))
             self.driver.find_element(*self.menu_dangqianrenwu_huifangziyuan_loc).click()
         except Exception as e:
@@ -199,6 +215,7 @@ class MainPage():
         try:
             self.wait.until(ec.presence_of_element_located(self.menu_dangqianrenwu_loc))
             self.driver.find_element(*self.menu_dangqianrenwu_loc).click()
+            sleep(1)
             self.wait.until(ec.presence_of_element_located(self.menu_dangqianrenwu_xinziyuan_loc))
             self.driver.find_element(*self.menu_dangqianrenwu_xinziyuan_loc).click()
         except Exception as e:

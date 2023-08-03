@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Aug 02 16:00:53 CST 2023","Wed Aug 02 16:01:03 CST 2023","10560","cases","smoke_test","TestSmoke","","","主流程冒烟测试",""
-"passed","Wed Aug 02 16:01:25 CST 2023","Wed Aug 02 16:01:36 CST 2023","11714","cases","smoke_test","TestSmoke","","","主流程冒烟测试",""
-"passed","Wed Aug 02 16:01:08 CST 2023","Wed Aug 02 16:01:20 CST 2023","11174","cases","smoke_test","TestSmoke","","","主流程冒烟测试",""
-"passed","Wed Aug 02 16:01:41 CST 2023","Wed Aug 02 16:01:52 CST 2023","10225","cases","smoke_test","TestSmoke","","","主流程冒烟测试",""
